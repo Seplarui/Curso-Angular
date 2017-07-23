@@ -13,8 +13,11 @@ export class AppComponent{
 
     public titulo: string = "Peliculas con Angular 2";
     public pelicula: Pelicula;
+    public mostrarDatos: boolean;
 
     constructor() {
+        this.mostrarDatos = false;
+
 
         this.pelicula = new Pelicula(1, "Batman vs Superman", "Zack Snider", 2016);
 
@@ -27,5 +30,10 @@ export class AppComponent{
 
         console.log(this.pelicula);
     }
+
+    onShowHide(value) {
+        this.mostrarDatos = value;
+    }
+    
 
 }

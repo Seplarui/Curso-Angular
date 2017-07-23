@@ -24,11 +24,15 @@ System.register(["angular2/core", "./model/pelicula"], function(exports_1, conte
             AppComponent = (function () {
                 function AppComponent() {
                     this.titulo = "Peliculas con Angular 2";
+                    this.mostrarDatos = false;
                     this.pelicula = new pelicula_1.Pelicula(1, "Batman vs Superman", "Zack Snider", 2016);
                     this.debug();
                 }
                 AppComponent.prototype.debug = function () {
                     console.log(this.pelicula);
+                };
+                AppComponent.prototype.onShowHide = function (value) {
+                    this.mostrarDatos = value;
                 };
                 AppComponent = __decorate([
                     core_1.Component({
