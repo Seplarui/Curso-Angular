@@ -1,5 +1,6 @@
+<meta charset="utf-8" />
 <h1>{{titulo}}</h1>
-<p>Listado de Peliculas</p>
+<p>Pelicula Favorita:</p>
 
 <button (click)="onShowHide(true)" [class.showingData]="mostrarDatos===true">Mostrar Datos</button>
 <button (click)="onShowHide(false)" [class.showingData]="mostrarDatos===false">Ocultar Datos</button>
@@ -17,3 +18,12 @@
     <input type="text" (keypress)="debug(true)" [(ngModel)]="pelicula.titulo"   />
 
 </p>
+
+<hr/>
+
+<p>Listado de peliculas: </p>
+<ul *ngFor="#pelicula of peliculas" style="margin-bottom: 20px">
+    <li>Titulo: <strong>{{pelicula.titulo}}</strong></li>
+    <li>Director: <strong>{{pelicula.director}}</strong></li>
+    <li *ngIf="pelicula.anio">Anyo: <strong>{{pelicula.anio}}</strong></li>
+</ul>
