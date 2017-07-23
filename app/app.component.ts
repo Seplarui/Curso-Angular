@@ -3,7 +3,8 @@ import { Pelicula } from "./model/pelicula";
 
 @Component({
     selector: "mi-app",
-    templateUrl: "app/view/peliculas.html"   
+    templateUrl: "app/view/peliculas.html",
+    styleUrls:["../assets/css/styles.css"]
 })
 
     //Crear componente
