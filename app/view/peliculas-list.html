@@ -21,7 +21,7 @@
 
 <p>Listado de peliculas: </p>
 <ul *ngFor="#pelicula of peliculas" style="margin-bottom: 20px">
-    <li (click)="onCambiarPelicula(pelicula)">Titulo: <strong>{{pelicula.titulo}}</strong></li>
+    <li (click)="onCambiarPelicula(pelicula)" class="pelicula-title" [class.clicked]="peliculaElegida.id===pelicula.id">Titulo: <strong>{{pelicula.titulo}}</strong></li>
     <li>Director: <strong>{{pelicula.director}}</strong></li>
     <li *ngIf="pelicula.anio">Anyo: <strong>{{pelicula.anio}}</strong></li>
 </ul>

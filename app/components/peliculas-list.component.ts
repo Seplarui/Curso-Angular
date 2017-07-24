@@ -10,6 +10,7 @@ import { Pelicula } from "./../model/pelicula";
 
 export class PeliculasListComponent{
     public pelicula: Pelicula;
+    public peliculaElegida: Pelicula;
     public mostrarDatos: boolean;
     public peliculas;
 
@@ -17,7 +18,6 @@ export class PeliculasListComponent{
         this.mostrarDatos = false;
 
 
-        this.pelicula = new Pelicula(1, "Batman vs Superman", "Zack Snider", 2016);
         this.peliculas = [
 
             new Pelicula(1, "Batman vs Superman", "Zack Snider", 2016),
@@ -26,6 +26,8 @@ export class PeliculasListComponent{
             new Pelicula(4, "Una historia Real", "Zack Snider", 2015),
             new Pelicula(5, "Don Jon", "Zack Snider", 2004)
         ];
+        this.peliculaElegida = this.peliculas[0];
+        this.pelicula = this.peliculas[0];
 
         this.debug();
 
@@ -51,7 +53,7 @@ export class PeliculasListComponent{
     onCambiarPelicula(pelicula) {
 
         this.pelicula = pelicula;
-    
+        this.peliculaElegida = pelicula;
     }
 
 

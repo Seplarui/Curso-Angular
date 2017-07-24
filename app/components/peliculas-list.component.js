@@ -24,7 +24,6 @@ System.register(["angular2/core", "./../model/pelicula"], function(exports_1, co
             PeliculasListComponent = (function () {
                 function PeliculasListComponent() {
                     this.mostrarDatos = false;
-                    this.pelicula = new pelicula_1.Pelicula(1, "Batman vs Superman", "Zack Snider", 2016);
                     this.peliculas = [
                         new pelicula_1.Pelicula(1, "Batman vs Superman", "Zack Snider", 2016),
                         new pelicula_1.Pelicula(2, "La verdad duele", "Will Smith", 2016),
@@ -32,6 +31,8 @@ System.register(["angular2/core", "./../model/pelicula"], function(exports_1, co
                         new pelicula_1.Pelicula(4, "Una historia Real", "Zack Snider", 2015),
                         new pelicula_1.Pelicula(5, "Don Jon", "Zack Snider", 2004)
                     ];
+                    this.peliculaElegida = this.peliculas[0];
+                    this.pelicula = this.peliculas[0];
                     this.debug();
                 }
                 PeliculasListComponent.prototype.debug = function (titulo) {
@@ -48,6 +49,7 @@ System.register(["angular2/core", "./../model/pelicula"], function(exports_1, co
                 };
                 PeliculasListComponent.prototype.onCambiarPelicula = function (pelicula) {
                     this.pelicula = pelicula;
+                    this.peliculaElegida = pelicula;
                 };
                 PeliculasListComponent = __decorate([
                     core_1.Component({
